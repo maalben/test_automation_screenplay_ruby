@@ -4,23 +4,23 @@ Feature: Pagina principal Resumen financiero
     Given Yo ingreso al sitio web
     When Yo accedo al sistema con usuario "testuser" y password "testpassword"
 
-  @TMS_QA-2001
+  @CP02001
   Scenario: Validar que la pagina redirigida sea el home
     Then Yo deberia ser redirigido a la pagina de la tabla de gastos
 
-  @TMS_QA-2002
+  @CP02002
   Scenario: Validar cantidad de transacciones de la tabla
     Then Yo deberia ver exactamente 6 transacciones en la tabla
 
-  @TMS_QA-2003
+  @CP02003
   Scenario: Validar saldo total
     Then Yo deberia ver el saldo total de 350
 
-  @TMS_QA-2004
+  @CP02004
   Scenario: Validar credito disponible
     Then Yo deberia ver el credito disponible de "17,800"
 
-  @TMS_QA-2005
+  @CP02005
   Scenario Outline: Validar tipos de valores y colores
     When Yo deberia validar que todos los valores "<value_type>" deben ser de color "<color>"
 
@@ -28,3 +28,11 @@ Feature: Pagina principal Resumen financiero
       | value_type | color   |
       | positive   | #00ff00 |
       | negative   | #ff0000 |
+
+  @CP02006
+  Scenario: Validar monto mas alto
+    Then Yo deberia ver que el monto mas alto es "1,250.00"
+
+  @CP02007
+  Scenario: Validar monto mas bajo
+    Then Yo deberia ver que el monto mas bajo es "- 320.00"

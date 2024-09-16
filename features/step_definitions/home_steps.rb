@@ -30,3 +30,19 @@ When("Yo deberia validar que todos los valores {string} deben ser de color {stri
     end
   end
 end
+
+Then("Yo deberia ver que el monto mas alto es {string}") do |montoAlto|
+  home_page = HomePage.new
+  monto_mas_alto_question = MontoMasAltoQuestion.new(home_page)
+  monto_mayor = monto_mas_alto_question.answered_by
+  monto_formateado = @utilities.formatear_monto(monto_mayor)
+  expect(montoAlto).to include(monto_formateado)
+end
+
+Then("Yo deberia ver que el monto mas bajo es {string}") do |montoBajo|
+  home_page = HomePage.new
+  monto_mas_bajo_question = MontoMasBajoQuestion.new(home_page)
+  monto_menor = monto_mas_bajo_question.answered_by
+  monto_formateado = @utilities.formatear_monto_bajo(monto_menor)
+  expect(montoBajo).to include(monto_formateado)
+end
