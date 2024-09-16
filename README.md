@@ -5,7 +5,7 @@ Ejercicio de automatización desarrollado en el lenguaje Ruby on Rails con estru
 ### Característcas
 
 - Realizado en Ruby on Rails.
-- Estructura de proyecto similar a Page Object Model (POM).
+- Estructura de proyecto similar a Screenplay pattern design.
 - Se utilizan las siguientes librerías para su ejecución:
 
 		spec
